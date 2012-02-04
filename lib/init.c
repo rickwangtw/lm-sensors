@@ -48,6 +48,9 @@
    the decimal numbers are always parsed properly. */
 static int sensors_parse(void)
 {
+#ifdef __ANDROID__
+	return 0;
+#else
 	int res;
 	char *locale;
 
@@ -70,6 +73,7 @@ static int sensors_parse(void)
 	}
 
 	return res;
+#endif
 }
 
 static void free_bus(sensors_bus *bus)

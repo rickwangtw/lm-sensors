@@ -25,7 +25,9 @@
 #include <string.h>
 #include <errno.h>
 #include <locale.h>
+#ifndef __ANDROID__
 #include <langinfo.h>
+#endif
 
 #ifndef __UCLIBC__
 #include <iconv.h>
